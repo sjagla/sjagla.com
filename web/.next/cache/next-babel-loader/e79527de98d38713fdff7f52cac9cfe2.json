@@ -1,0 +1,1 @@
+{"ast":null,"code":"// components/ChangeBackground.js\nimport React, { useEffect } from \"react\";\nexport default function ChangeBackground(color) {\n  document.documentElement.style.setProperty(\"--background-color\", color);\n}","map":null,"metadata":{},"sourceType":"module"}
