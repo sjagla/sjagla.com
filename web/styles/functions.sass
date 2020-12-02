@@ -1,0 +1,65 @@
+// _functions.sass
+
+// https://engageinteractive.co.uk/blog/em-vs-rem-vs-px
+// https://stackoverflow.com/questions/38367957/how-to-calculate-rem-properly-in-sass
+
+@function power($number, $power)
+ // use this to get $number to the power of $power
+ $exponent: 1
+ @if $power > 0
+     @for $i from 1 through $power
+         $exponent: $exponent * $number
+ @else if $power < 0
+   @for $i from 1 through $power
+       $exponent: $exponent / $number
+ @return $exponent
+
+
+@function calculateRem($size)
+  // use this to get rem from px for a body font of 16 (standard for browsers)
+  $rem-size: $size / 16
+  @return #{$rem-size}rem
+
+
+@function getCalc($size, $ratio)
+  //  use this to get a calc(vw + px) from vw for better scaling of fonts with
+      vw on smaller devices. Bigger ration = more flexible size
+  $vw: $ratio * $size
+  $px: (1 - $ratio) * $size / 0.052
+  @return calc(#{$vw}vw + #{$px}px)
+
+
+@function calculateFont($base-size, $scale, $step)
+  // use this to get one of the font sizes from a type scale
+  $font-size: 0
+  @if $step > -1
+    $power: power($scale, $step)
+    $font-size: getCalc((($base-size * $power) * 0.052), 0.1 * $step)
+  @else
+    $negative-step: -($step)
+    $power: power($scale, $step)
+    $font-size: getCalc((($base-size * $power) * 0.052), 0.1 * $negative-step)
+  // 0.052 for designing on 1920 and converting to vw
+  @return $font-size
+
+
+@mixin fontSize($size)
+  font-size: $size
+
+
+// MEDIA QUERY SIZES
+
+$tablet-width: 680px
+$desktop-width: 1024px
+
+@mixin portrait
+  @media (max-width: #{$desktop-width} - 1px) and (orientation:portrait)
+    @content
+
+@mixin landscape
+  @media screen and (min-width: #{$desktop-width} - 1px) and (orientation: landscape), (min-width: #{$desktop-width})
+    @content
+
+@mixin tabletUpwards
+  @media (min-width: #{$tablet-width})
+    @content

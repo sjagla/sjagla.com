@@ -1,0 +1,139 @@
+// Home.module.sass
+
+@use 'functions'
+@use 'globals'
+
+@include globals.animationKeyframes()
+
+.header
+    width: 80vw
+    margin: 10vh auto
+
+    @include functions.landscape
+    width: 80vw
+
+    .backLink
+        display: flex
+        flex-direction: row
+        justify-content: flex-start
+        align-items: center
+        font-weight: 700
+
+        &:hover
+            animation: swingHorizontal 1s ease
+            animation-iteration-count: 1
+
+        img
+            height: auto
+            width: 2%
+            margin-right: functions.calculateRem(16)
+
+    div
+        display: grid
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr))
+        justify-items: left
+        align-items: center
+        grid-column-gap: 5vw
+
+        margin-top: 5vh
+
+        div
+            display: flex
+            flex-direction: column
+            justify-items: flex-start
+            align-items: flex-start
+
+        h1
+            @extend .heading2
+        
+        p
+            @extend .text
+            font-weight: 400
+            font-family: globals.$font-stack
+            max-width: functions.calculateRem(600)
+        
+
+
+    
+.main
+    width: globals.$body-width
+    margin: 4vh auto 0 auto
+
+    @include functions.landscape
+        width: globals.$desktop-body-width
+
+    .backLink
+        display: flex
+        flex-direction: row
+        justify-content: flex-start
+        align-items: center
+        font-weight: 700
+
+        &:hover
+            animation: swingHorizontal 1s ease
+            animation-iteration-count: 1
+
+        img
+            height: auto
+            width: 2%
+            margin-right: functions.calculateRem(16)
+
+    article
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: flex-start
+
+        margin: 8vh auto 10vh auto
+
+        max-width: 90%
+
+        @include functions.landscape
+            max-width: 70%
+
+        h2
+            @extend .heading4
+            font-weight: 600
+            margin: 2em 0 0.2em 0 
+
+        p 
+            @extend .text
+
+        a
+            display: inline-block
+            color: hsl(222, 25%, 14%)
+            position: relative
+
+            &::after 
+                content: ''
+                position: absolute
+                width: 100%
+                transform: scaleX(1)
+                height: 2px
+                bottom: 0
+                left: 0
+                background-color: globals.$third-color-overlay
+                transform-origin: bottom left
+                transition: transform .3s ease-in-out
+
+            &:hover::after 
+                transform: scaleX(0)
+                transform-origin: bottom right
+        
+        img
+            width: 100%
+            margin-bottom: 4vh
+
+        ul
+            list-style: disc
+            margin-block-start: 2em
+            padding-inline-start: 4em
+
+            margin-top: -0.6em
+            margin-bottom: 1.15em
+
+            li
+                margin-bottom: 0.6em
+                list-style: disc
+    
+ 

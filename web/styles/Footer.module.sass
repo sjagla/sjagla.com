@@ -1,0 +1,85 @@
+// Home.module.sass
+
+@use 'functions'
+@use 'globals'
+
+.footer
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+
+  width: globals.$body-width
+  margin: 0 auto 20vh auto
+
+  @include functions.landscape
+    width: globals.$desktop-body-width
+
+  .heading2
+    color: globals.$fifth-color-overlay
+
+  .description
+    @extend .text
+    max-width: functions.calculateRem(700)
+    order: 3
+
+    @include functions.landscape
+      margin: 2vw 0 -(functions.calculateRem(160)) 0
+      transform: translateX(25%)
+      order: 2
+      width: 65%
+
+  .profileImage
+    transform: rotate(-5deg)
+    max-width: 50%
+    margin: 4vh 0
+    order: 2
+
+    @include functions.landscape
+      transform: rotate(-15deg) translateX(-120%)
+      max-width: 30%
+
+
+.footerPost
+    @extend .footer
+    position: relative
+
+    &::before
+        content: ''
+        position: absolute
+        display: block
+        top: -1px
+        width: 100%
+        height: 1px
+        background-color: globals.$third-color-overlay
+
+
+    .profileImage
+        @include functions.landscape
+            max-width: 20%
+            transform: rotate(-15deg) translateX(-150%)
+
+
+.footerHome
+    @extend .footer
+
+    .description
+        @include functions.landscape
+            font-size: functions.calculateRem(22)
+
+.contactMenu 
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    width: 50%
+    max-width: 200px
+    order: 4
+    margin-top: 4vh
+
+    li
+        &:hover
+            animation: swingHorizontal 1s ease
+            animation-iteration-count: 1
+    
+    @include functions.landscape
+      display: none

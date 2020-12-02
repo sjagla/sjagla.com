@@ -1,0 +1,23 @@
+{
+  "name": "sjagla-com",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@sanity/block-content-to-react": "^2.0.7",
+    "@sanity/client": "^2.0.9",
+    "@sanity/image-url": "^0.140.19",
+    "classnames": "^2.2.6",
+    "groq": "^2.0.9",
+    "next": "10.0.1",
+    "next-sass": "^1.0.3",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-waypoint": "^9.0.3",
+    "sass": "^1.29.0"
+  }
+}

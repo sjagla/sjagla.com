@@ -1,0 +1,89 @@
+// main.sass
+
+@use 'globals' as *
+@use 'functions' as *
+
+:root
+    --background-color: $background-color
+
+body
+  font-family: $font-stack
+  font-weight: $font-weight
+  color: $font-color
+
+  display: block
+  margin: 0 auto
+
+  overflow-x: hidden
+  background-color: var(--background-color)
+
+  transition: background-color 1s
+
+ul, li, ol, a, h1, h2, p
+  // Clean all styling
+  color: $font-color
+  list-style: none
+  text-decoration: none
+  margin-block-start: 0
+  margin-block-end: 0
+  margin-inline-start: 0
+  margin-inline-end: 0
+  padding-inline-start: 0
+
+
+p, li
+  @include fontSize($text-font-size)
+
+
+img
+  max-height: 100vh
+  width: auto
+  border-radius: 2px
+  object-fit: contain
+
+
+.button
+  @extend %button
+  // for some reason one button ignores fonts and chooses Ubuntu
+  font-family: $font-stack !important
+
+.none
+  display: none
+
+
+.footer
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+
+  width: $body-width
+  margin: 0 auto 20vh auto
+
+  @include landscape
+    width: $desktop-body-width
+
+  .heading2
+    color: $fifth-color-overlay
+
+  .description
+    @extend .text
+    max-width: calculateRem(700)
+    order: 3
+
+    @include landscape
+      font-size: calculateRem(22)
+      margin: 2vw 0 -(calculateRem(160)) 0
+      transform: translateX(25%)
+      order: 2
+      width: 65%
+
+  .profileImage
+    transform: rotate(-5deg)
+    max-width: 65%
+    margin: 4vh 0
+    order: 2
+
+    @include landscape
+      transform: rotate(-15deg) translateX(-120%)
+      max-width: 30%

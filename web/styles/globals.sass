@@ -1,0 +1,192 @@
+// _globals.sass
+
+@use 'functions' as *
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    FONTS
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+$font-stack: Karla, "Karla", Helvetica, Ubuntu, sans-serif
+$h-font-stack: Spectral, "Spectral", Helvetica, Ubuntu, sans-serif
+
+// Type scale name: Golden ration  Scale: 1.618
+$font-scale: 1.5
+$base-font-size: 18
+
+$font-weight: 400
+$h-font-weight: 800
+
+$h-line-height: 1.15
+$h-margin: 0 0.05em
+
+$p-margin-bottom: 1.15em
+$body-line-height: 1.9
+
+$h1-font-size: calculateFont($base-font-size, $font-scale, 5)
+$h2-font-size: calculateFont($base-font-size, $font-scale, 4)
+$h3-font-size: calculateFont($base-font-size, $font-scale, 3)
+$h4-font-size: calculateFont($base-font-size, $font-scale, 2)
+$h5-font-size: calculateFont($base-font-size, $font-scale, 1)
+$text-font-size: calculateFont($base-font-size, $font-scale, 0)
+$small-font-size: calculateRem(14) // outside of scale
+
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  COLOURS
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+$primary-color: #1C2530
+$secondary-color: #FBFBFB
+$secondary-color-overlay: #8B8B8B
+
+$third-color: #D6F3D9
+$third-color-overlay: #597568
+
+$fourth-color: #FBD7D4
+$fourth-color-overlay: #64403C
+
+$fifth-color: #D4E1FB
+$fifth-color-overlay: #405177
+
+$background-color: $secondary-color
+$bg-color-header: $third-color
+$bg-color-cases: $secondary-color
+$bg-color-shots: $fourth-color
+$bg-color-contact: $fifth-color
+
+$font-color: $primary-color
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  GRID
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+$body-start: 16px
+// pixels to disregard rem changes
+$body-width: 90vw
+$desktop-body-width: 60vw
+
+// $body-max-width: 1700px
+$section-margin: 30vh
+
+%grid
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr))
+
+  grid-column-gap: calculateRem(32)
+  grid-row-gap: calculateRem(16)
+
+
+
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  STYLES
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+.button
+  display: block
+  width: max-content
+  max-width: 90vw
+  padding: 1em 2em
+  position: relative
+
+  background-color: $secondary-color
+  color: $background-color
+  border: 0
+  font-weight: 500
+
+  text-align: left
+
+  @include landscape
+    max-width: 35vw
+
+%button
+  display: block
+  width: max-content
+  max-width: 90vw
+  padding: 1em 2em
+  position: relative
+  overflow: hidden
+
+  background-color: $secondary-color
+  color: $background-color
+  border: 0
+  font-weight: 500
+
+  text-align: left
+
+  span
+    position: relative
+    z-index: 1
+
+  &::before
+    content: ""
+    position: absolute
+    top: 50%
+    left: 50%
+    width: 300px
+    height: 300px
+    z-index: 0
+    border-radius: 50%
+    background-color: $primary-color
+    transform: translate3d(-50%,-50%,0) scale3d(0,0,0)
+    transition: opacity .4s cubic-bezier(.19,1,.22,1),transform .75s cubic-bezier(.19,1,.22,1)
+    opacity: 0
+
+  &:hover::before
+    opacity: 1
+    transition-duration: .85s
+    transform: translate3d(-50%,-50%,0) scale3d(1,1,1)
+
+  &:hover span
+    color: $secondary-color
+
+.text
+  margin-bottom: $p-margin-bottom
+  line-height: $body-line-height
+
+
+
+.heading1, .heading2, .heading3, .heading4, .heading5
+  font-family: $h-font-stack
+  font-weight: $h-font-weight
+  line-height: $h-line-height
+
+
+.heading1
+  margin: 0
+  @include fontSize($h1-font-size)
+
+
+.heading2
+  @include fontSize($h2-font-size)
+
+
+.heading3
+  @include fontSize($h3-font-size)
+
+
+.heading4
+  @include fontSize($h4-font-size)
+
+.heading5
+  @include fontSize($h5-font-size)
+
+.subtext
+  @include fontSize($small-font-size)
+
+=animationKeyframes()
+  @keyframes swingHorizontal
+    15%
+        transform: translateX(5px)
+    30%
+        transform: translateX(-5px)
+    50%
+        transform: translateX(3px)
+    65%
+        transform: translateX(-3px)
+    80%
+        transform: translateX(2px)
+    100%
+        transform: translateX(0)
+  

@@ -1,0 +1,55 @@
+@use 'globals' as *
+@use 'functions' as *
+
+@include animationKeyframes()
+
+.container 
+    display: none
+    position: fixed
+    top: 0
+    right: 0
+
+    flex-direction: column
+
+    height: 100vh
+    width: 12vw
+
+    padding: calculateRem(32) calculateRem(32) 0 0
+
+    a
+        font-weight: 800
+        font-size: $base-font-size
+
+    @include landscape
+        display: flex
+
+
+
+.contactMenu 
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+
+    li
+        &:hover
+            animation: swingHorizontal 1s ease
+            animation-iteration-count: 1
+            
+
+.navMenu
+    display: flex
+    flex-direction: column
+
+    margin-top: 30vh
+
+    li
+        margin-top: calculateRem(24)
+
+        &:hover
+            animation: swingHorizontal 1s ease
+            animation-iteration-count: 1
+
+        p
+            font-weight: 400
+            font-size: $small-font-size
+            line-height: 140%

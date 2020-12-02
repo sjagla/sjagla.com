@@ -1,0 +1,191 @@
+// Home.module.sass
+
+@use 'functions'
+@use 'globals'
+
+.homeHeading1
+  @extend .heading1
+
+.homeHeading2
+  @extend .heading3
+  @include functions.fontSize(globals.$h4-font-size)
+  text-align: center
+
+  @include functions.landscape
+    @include functions.fontSize(globals.$h2-font-size)
+    
+
+.decoration
+    position: absolute
+    z-index: 0
+    max-width: 20vw
+    max-height: 20vh
+
+.header
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: flex-start
+
+  height: 100vh
+  width: globals.$body-width
+  margin: 0 auto
+
+  @include functions.landscape
+    width: globals.$desktop-body-width
+  
+  .homeHeading1
+    line-height: 1
+    margin-bottom: functions.calculateRem(32)
+    letter-spacing: 0.01em
+    font-size: globals.$h2-font-size
+
+    @include functions.landscape
+      font-size: globals.$h1-font-size
+    
+
+  .homeSubheading1
+    text-transform: uppercase
+    font-size: globals.$small-font-size
+    letter-spacing: 0.1em
+
+    span
+      font-weight: 800
+
+  .figure1, .figure2, .figure3, .figure4, .figure5, .figure8
+    @extend .decoration
+
+  .figure1
+    top: -4vh
+    left: 20vw
+    transform: rotate(120deg)
+  
+  .figure2
+    display: none
+    top: 20vh
+    left: -2vw
+    transform: rotate(50deg)
+
+    @include functions.landscape
+      display: inherit
+
+  .figure3
+    top: 80vh
+    left: 70vw
+    transform: rotate(280deg)
+  
+  .figure4
+    top: 80vh
+    left: -2vw
+    transform: rotate(190deg)
+
+  .figure5
+    display: none
+    top: 5vh
+    left: 50vw
+    transform: rotate(190deg)
+
+    @include functions.landscape
+      display: inherit
+
+  .figure8
+    display: none
+    top: 80vh
+    left: 35vw
+    transform: rotate(190deg)
+
+    @include functions.landscape
+      display: inherit
+
+
+.main
+  width: globals.$body-width
+  margin: 0 auto
+
+  @include functions.landscape
+    width: globals.$desktop-body-width
+  
+.cases 
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+
+  margin-top: 20vh
+
+  .caseContainer
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: center
+
+    margin-bottom: globals.$section-margin
+
+    @extend .magnifyText
+
+    .homeHeading2
+      position: relative
+      z-index: 100
+      margin: 0
+      margin-bottom: -(0.2em)
+      line-height: 100%
+    
+    img
+      max-width: 80%
+
+.shots 
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr))
+  max-width: 1039px
+  grid-gap: 10vh
+
+  margin: 0 auto globals.$section-margin auto
+
+  @include functions.landscape
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr))
+    max-width: inherit
+    width: globals.$desktop-body-width
+    grid-gap: 2vw
+
+  span
+    position: absolute
+
+  .heading2
+    grid-row: 1
+    grid-column: 1 / -1
+
+
+    text-align: center
+
+    color: globals.$fourth-color-overlay
+
+  .shotContainer
+    @extend .magnifyText
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: center
+    
+    .heading5
+      text-align: center
+      margin: functions.calculateRem(16) 0
+      font-weight: 700
+      font-family: globals.$font-stack
+
+
+.magnifyText
+
+  img, .homeHeading2, .heading5
+    transition: color 0.25s ease-in-out, transform 0.25s ease-in-out
+
+  &:hover
+    .homeHeading2, .heading5
+      transform: scale(1.05)
+      color: hsl(243, 80%, 62%)
+
+    img
+      transform: scale(0.95)
+
+  &:active
+      .homeHeading2, .heading5
+        transform: scale(.9)
