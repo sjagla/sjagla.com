@@ -75,7 +75,7 @@ export default function Footer({ home=false }) {
                 <p className={styles.description}>{description}</p>
                 <img 
                     className={styles.profileImage}
-                    src="/images/profile.jpg" 
+                    src="/images/profile.png" 
                     alt="Me standing amongst people at a protest. I have a mask on (coronavirus)."/>
                 <ul className={styles.contactMenu}>
             <h2 className="none">Contact</h2>
