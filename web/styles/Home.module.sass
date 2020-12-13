@@ -8,7 +8,6 @@
 
 .homeHeading2
   @extend .heading3
-  @include functions.fontSize(globals.$h4-font-size)
   text-align: center
 
   @include functions.landscape
@@ -135,14 +134,14 @@
 
 .shots 
   display: grid
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr))
+  grid-template-columns: 1fr
   max-width: 1039px
   grid-gap: 10vh
 
   margin: 0 auto globals.$section-margin auto
 
   @include functions.landscape
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr))
+    grid-template-columns: auto auto
     max-width: inherit
     width: globals.$desktop-body-width
     grid-gap: 2vw
@@ -167,10 +166,11 @@
     align-items: center
     
     .heading5
-      text-align: center
-      margin: functions.calculateRem(16) 0
-      font-weight: 700
-      font-family: globals.$font-stack
+      display: none
+      // text-align: center
+      // margin: functions.calculateRem(16) 0
+      // font-weight: 700
+      // font-family: globals.$font-stack
 
 
 .magnifyText

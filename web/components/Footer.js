@@ -7,7 +7,7 @@ import Image from 'next/image'
 
 
 export default function Footer({ home=false }) {
-    let description = "I'm a UX/UI designer, but I studied cognitive science. I love design, human-computer interaction, philosophy, open-source and some more. I'm also a firm believer in social change and would like to leave the world having made it at least a little bit better."
+    let description = "I love bread, wine and the 8-point grid. I take ideas, mix them with a fascination for visual design, love for open-source and a degree in Cognitive Science to make pleasing interfaces."
     if (home) {
         return (
             <footer className={styles.footerHome}>
@@ -53,7 +53,7 @@ export default function Footer({ home=false }) {
             </li>
 
             <li id="twitter-link">
-              <Link href="https://twitter.com/sjagla">
+              <Link href="https://twitter.com/sebastian_jagla">
                 <a> 
                   <span className={"none"}>Twitter</span> 
                   <Image
