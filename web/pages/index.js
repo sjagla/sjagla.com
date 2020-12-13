@@ -94,8 +94,8 @@ export default function Home() {
                   <Image
                   src="/images/zieloni.png" 
                   alt="A frame of a website for an AI-related game project"
-                  width={600}
-                  height={450}
+                  width={530}
+                  height={400}
                   />
                   <h3 className={styles.heading5}>Zieloni</h3>
                 </a>
@@ -108,8 +108,8 @@ export default function Home() {
                 <Image
                   src="/images/dominik.png" 
                   alt="A frame of a website for an AI-related game project"
-                  width={600}
-                  height={450}
+                  width={530}
+                  height={400}
                 />
                 <h3 className={styles.heading5}>A scientist's website</h3>
                 </a>
@@ -122,8 +122,8 @@ export default function Home() {
                   <Image
                   src="/images/app.png" 
                   alt=""
-                  width={600}
-                  height={450}
+                  width={530}
+                  height={400}
                   />
                   <h3 className={styles.heading5}>Biotech app icon</h3>
                 </a>
