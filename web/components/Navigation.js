@@ -41,7 +41,7 @@ function Navigation(props) {
             </li>
 
             <li id="twitter-link">
-              <Link href="https://twitter.com/sjagla">
+              <Link href="https://twitter.com/sebastian_jagla">
                 <a> 
                   <span className={"none"}>Twitter</span> 
                   <Image
