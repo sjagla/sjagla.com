@@ -82,12 +82,25 @@ export default function Home() {
           </section>
         </Waypoint>
         <Waypoint
-              topOffset='300px'
-              onEnter={({ previousPosition, currentPosition, event }) => {
-                ChangeBackground('#FBD7D4');
-              }}>
+          topOffset='300px'
+          onEnter={({ previousPosition, currentPosition, event }) => {
+            ChangeBackground('#FBD7D4');
+          }}>
           <section className={styles.shots} id="miniShots">
             <h2 className={styles.heading2}>Mini shots</h2>
+            <div className={styles.shotContainer}>
+              <Link href="https://dribbble.com/shots/14533586-Website-for-the-Polish-young-Greens">
+                <a>
+                  <Image
+                    src="/images/audiobook.png" 
+                    alt="A frame of three iPhone mockups with my app"
+                    width={530}
+                    height={400}
+                  />
+                  <h3 className={styles.heading5}>Audiobook app concept</h3>
+                </a>
+              </Link>
+            </div>
             <div className={styles.shotContainer}>
               <Link href="https://dribbble.com/shots/14533586-Website-for-the-Polish-young-Greens">
                 <a>
