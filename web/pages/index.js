@@ -89,7 +89,7 @@ export default function Home() {
           <section className={styles.shots} id="miniShots">
             <h2 className={styles.heading2}>Mini shots</h2>
             <div className={styles.shotContainer}>
-              <Link href="https://dribbble.com/shots/14533586-Website-for-the-Polish-young-Greens">
+              <Link href="https://dribbble.com/shots/14933725-An-audiobook-app-concept">
                 <a>
                   <Image
                     src="/images/audiobook.png" 
