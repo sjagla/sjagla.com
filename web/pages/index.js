@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import styles from '../styles/Home.module.sass'
 import Navigation from '../components/Navigation'
-import { Waypoint } from 'react-waypoint';
+import { Waypoint } from 'react-waypoint'
 import ChangeBackground from '../components/ChangeBackground'
 import Footer from '../components/Footer'
 
@@ -44,7 +44,7 @@ export default function Home() {
       <main className={styles.main}>
         <Waypoint
           onEnter={({ previousPosition, currentPosition, event }) => {
-            ChangeBackground('#FBFBFB');
+            ChangeBackground('#FBFBFB')
           }}
           topOffset='500px'
           bottomOffset='500px'
@@ -53,12 +53,12 @@ export default function Home() {
             <h2 className={"none"}>Case studies</h2>
 
             <div className={styles.caseContainer}>
-              <Link href="post/beauty-and-beauty">
+              <Link href="post/travello">
                 <a>
-                  <h3 className={styles.homeHeading2}>Beauty & Beauty</h3>  
+                  <h3 className={styles.homeHeading2}>Travello</h3>  
                   <Image
-                    src="/images/beauty.png" 
-                    alt="A frame of a website for a beauty salon"
+                    src="/images/travello.png" 
+                    alt="A frame of an app related to travel"
                     width={1000}
                     height={750}
                   />
@@ -79,12 +79,26 @@ export default function Home() {
                 </a>
               </Link>
             </div>
+
+            <div className={styles.caseContainer}>
+              <Link href="post/beauty-and-beauty">
+                <a>
+                  <h3 className={styles.homeHeading2}>Beauty &amp; Beauty</h3>
+                  <Image
+                    src="/images/beauty.png" 
+                    alt="A frame of a website for a beauty salon"
+                    width={1000}
+                    height={750}
+                  />
+                </a>
+              </Link>
+            </div>
           </section>
         </Waypoint>
         <Waypoint
           topOffset='300px'
           onEnter={({ previousPosition, currentPosition, event }) => {
-            ChangeBackground('#FBD7D4');
+            ChangeBackground('#FBD7D4')
           }}>
           <section className={styles.shots} id="miniShots">
             <h2 className={styles.heading2}>Mini shots</h2>
@@ -118,13 +132,13 @@ export default function Home() {
             <div className={styles.shotContainer}>
               <Link href="https://dribbble.com/shots/14533205-An-accepted-concept-for-a-mathematician-s-website">
                 <a>
-                <Image
-                  src="/images/dominik.png" 
-                  alt="A frame of a website for an AI-related game project"
-                  width={530}
-                  height={400}
-                />
-                <h3 className={styles.heading5}>A scientist's website</h3>
+                  <Image
+                    src="/images/dominik.png" 
+                    alt="A frame of a website for an AI-related game project"
+                    width={530}
+                    height={400}
+                  />
+                  <h3 className={styles.heading5}>A scientist's website</h3>
                 </a>
               </Link>
             </div>

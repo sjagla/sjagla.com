@@ -24,6 +24,8 @@ const Post = (props) => {
     body = []
   } = props
 
+  console.log(props)
+
   return (
     <BlogLayout siteTitle={title} postImage={postImage} postDescription={postDescription}>
         <Waypoint
