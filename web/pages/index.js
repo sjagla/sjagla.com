@@ -53,12 +53,12 @@ export default function Home() {
             <h2 className={"none"}>Case studies</h2>
 
             <div className={styles.caseContainer}>
-              <Link href="post/beauty-and-beauty">
+              <Link href="post/travello">
                 <a>
-                  <h3 className={styles.homeHeading2}>Beauty & Beauty</h3>  
+                  <h3 className={styles.homeHeading2}>Travello</h3>  
                   <Image
-                    src="/images/beauty.png" 
-                    alt="A frame of a website for a beauty salon"
+                    src="/images/travello.png" 
+                    alt="A frame of an app related to travel"
                     width={1000}
                     height={750}
                   />
@@ -79,6 +79,21 @@ export default function Home() {
                 </a>
               </Link>
             </div>
+
+            <div className={styles.caseContainer}>
+              <Link href="post/beauty-and-beauty">
+                <a>
+                  <h3 className={styles.homeHeading2}>Beauty & Beauty</h3>  
+                  <Image
+                    src="/images/beauty.png" 
+                    alt="A frame of a website for a beauty salon"
+                    width={1000}
+                    height={750}
+                  />
+                </a>
+              </Link>
+            </div>
+
           </section>
         </Waypoint>
         <Waypoint
