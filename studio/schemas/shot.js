@@ -1,6 +1,6 @@
 export default {
-  name: 'post',
-  title: 'Post',
+  name: 'shot',
+  title: 'Shot',
   type: 'document',
   fields: [
     {
@@ -9,34 +9,19 @@ export default {
       type: 'string'
     },
     {
+      name: 'url',
+      title: 'Link',
+      type: 'string'
+    },
+    {
       name: 'show',
       title: 'Show',
       type: 'boolean'
     },
     {
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
-      options: {
-        source: 'title',
-        maxLength: 96
-      }
-    },
-    {
       name: 'description',
       title: 'Article description',
       type: 'string'
-    },
-    {
-      name: 'navDescription',
-      title: 'Article description visible in navigation',
-      type: 'string'
-    },
-    {
-      name: 'author',
-      title: 'Author',
-      type: 'reference',
-      to: {type: 'author'}
     },
     {
       name: 'mainImage',
@@ -52,21 +37,10 @@ export default {
       type: 'string'
     },
     {
-      name: 'categories',
-      title: 'Categories',
-      type: 'array',
-      of: [{type: 'reference', to: {type: 'category'}}],
-    },
-    {
       name: 'publishedAt',
       title: 'Published at',
       type: 'datetime',
-    },
-    {
-      name: 'body',
-      title: 'Body',
-      type: 'blockContent',
-    },
+    }
   ],
 
   preview: {
