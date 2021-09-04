@@ -79,33 +79,6 @@ export default function Home (props) {
             )}
           </section>
         </Waypoint>
-        <Waypoint
-          topOffset='300px'
-          onEnter={({ previousPosition, currentPosition, event }) => {
-            ChangeBackground('#FBD7D4')
-          }}>
-          <section className={styles.shots} id="miniShots">
-            <h2 className={styles.heading2}>Mini shots</h2>
-            {shots.map(
-              ({ _id, title = '', url = '', slug = '', mainImage = '', imageAlt = '' }) =>
-                (
-                  <div key={_id} className={styles.shotContainer}>
-                    <Link href={url}>
-                      <a>
-                        <Image
-                          src={`${urlFor(mainImage.asset)}`}
-                          alt={imageAlt}
-                          width={530}
-                          height={400}
-                        />
-                        <h3 className={styles.heading5}>{title}</h3>
-                      </a>
-                    </Link>
-                  </div>
-                )
-            )}
-          </section>
-        </Waypoint>
       </main>
       <Footer home={true}/>
     </div>
